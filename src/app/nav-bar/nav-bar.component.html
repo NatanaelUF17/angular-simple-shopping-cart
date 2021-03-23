@@ -1,1 +1,13 @@
-<p>nav-bar works!</p>
+<mat-toolbar color="primary">
+  <span>
+    <a [routerLink]="['/']">
+      <h1>My Store</h1>
+    </a>
+  </span>
+
+  <div class="shopping-cart">
+    <a mat-flat-button color="primary" class="button fancy-button">
+      <i class="material-icons">shopping_cart</i> Checkout
+    </a>
+  </div>
+</mat-toolbar>
