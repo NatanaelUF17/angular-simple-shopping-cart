@@ -1,6 +1,26 @@
 <h3>Cart</h3>
 
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
 <div class="cart-item" *ngFor="let item of cartItems">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
+  <div class="item-description">
+    <span>{{ item.name }}</span> 
+    <span>{{ item.price | currency }}</span>
+  </div>
 </div>
+
+<form class="purchaseForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name:</mat-label>
+    <input matInput placeholder="Name of the customer..." formControlName="name">
+  </mat-form-field>
+  <div class="divider"></div>
+  <mat-form-field>
+    <mat-label>Address:</mat-label>
+    <input matInput placeholder="Address of the customer..." formControlName="address">
+  </mat-form-field>
+  <div class="divider"></div>
+  <button mat-flat-button color="primary" class="button" type="submit">Purchase</button>
+</form>
